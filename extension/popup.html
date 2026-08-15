@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-area">
+                <span class="shield-icon">🛡️</span>
+                <h1>PhishGuard</h1>
+            </div>
+            <div id="status-badge" class="status-badge neutral">Ready</div>
+        </header>
+
+        <main>
+            <div class="url-section">
+                <label for="current-url">Target URL</label>
+                <input 
+                    type="text" 
+                    id="current-url" 
+                    placeholder="Paste URL here or scan current tab"
+                >
+                <small class="hint-text">
+                    Leave unchanged to scan current tab, or paste any URL to scan manually
+                </small>
+            </div>
+
+            <div id="result-card" class="result-card hidden">
+                <div class="verdict-header">
+                    <div id="verdict-icon" class="verdict-icon"></div>
+                    <h2 id="verdict-text">Safe</h2>
+                </div>
+
+                <div class="confidence-section">
+                    <div class="confidence-label">
+                        <span>Confidence Score</span>
+                        <span id="confidence-score">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="confidence-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3>Analysis Report</h3>
+                    <p id="reason-text">No threats detected.</p>
+                </div>
+            </div>
+
+            <div id="error-message" class="error-message hidden">
+                <p>⚠️ <span id="error-text"></span></p>
+            </div>
+
+            <button id="scan-btn" class="primary-btn">
+                <span class="btn-text">Scan</span>
+                <div class="spinner hidden"></div>
+            </button>
+        </main>
+
+        <footer>
+            <p>PhishGuard Security Engine v1.0</p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
