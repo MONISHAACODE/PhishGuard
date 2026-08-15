@@ -85,3 +85,30 @@ The extension captures the browser URL and sends it to the backend.
 - **Minimal Permissions**: Uses `activeTab` to respect user privacy.
 - **Input Validation**: Backend strictly validates URLs before processing.
 - **CORS**: Configured to allow extension communication.
+
+## 🔍 How It Works
+
+1. User visits a website.
+2. The Chrome Extension captures the URL.
+3. The URL is sent to the FastAPI Backend.
+4. The detection engine analyzes the URL using heuristic signals.
+5. A risk score is calculated.
+6. The system returns the verdict:
+   - 🟢 Safe
+   - 🟡 Suspicious
+   - 🔴 Phishing
+
+## 🧰 Technologies Used
+
+- **Frontend:** HTML, CSS, JavaScript
+- **Browser Extension:** Chrome Extension – Manifest V3
+- **Backend:** Python, FastAPI
+- **Detection:** Heuristic URL Analysis
+- **Server:** Uvicorn
+- **Database:** MySQL
+- **Deployment:** Render / Railway
+
+## 👩‍💻 Author
+
+**Monisha R**  
+B.Sc. Computer Technology
